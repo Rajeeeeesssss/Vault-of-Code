@@ -15,7 +15,7 @@ class Student {
     }
 
     public String toString() {
-        return "Name: " + N + ", Age: " + A + ", Department: " + D + ", Roll No: " + R;
+        return "Name: " + N + ", Age: " + A + ", Department: " + D + ", ID: " + R;
     }
 }
 
@@ -45,7 +45,7 @@ public class Student_Manage {
                     S.nextLine();
                     System.out.print("Department: ");
                     String D = S.nextLine();
-                    System.out.print("Roll No: ");
+                    System.out.print("ID: ");
                     String R = S.nextLine();
 
                     student.add(new Student(N, A, D, R));
@@ -64,7 +64,7 @@ public class Student_Manage {
                             System.out.println("1. Name.");
                             System.out.println("2. Age.");
                             System.out.println("3. Department.");
-                            System.out.println("4. Roll Number.");
+                            System.out.println("4. ID.");
                             System.out.print("Enter your choice: ");
                             int fieldC = S.nextInt();
                             S.nextLine();
@@ -87,30 +87,30 @@ public class Student_Manage {
                                     System.out.println("Department updated.");
                                     break;
                                 case 4:
-                                    System.out.print("Enter New Roll Number: ");
+                                    System.out.print("Enter New ID: ");
                                     s.R = S.nextLine();
-                                    System.out.println("Roll Number updated.");
+                                    System.out.println("ID updated.");
                                     break;
                                 default:
-                                    System.out.println("Invalid field choice.");
+                                    System.out.println("Invalid choice.");
                             }
                             break;
                         }
                     }
 
                     if (!foundU) {
-                        System.out.println("Student with Roll No " + rollU + " not found.");
+                        System.out.println("Student with ID " + rollU + " not found.");
                     }
                     break;
 
                 case 3:
-                    System.out.print("Enter Roll No of student to delete: ");
-                    String rollToDelete = S.nextLine();
-                    boolean removed = student.removeIf(s -> s.R.equals(rollToDelete));
+                    System.out.print("Enter ID of student to delete: ");
+                    String ID = S.nextLine();
+                    boolean removed = student.removeIf(s -> s.R.equals(ID));
                     if (removed) {
                         System.out.println("Student deleted.");
                     } else {
-                        System.out.println("Student with Roll No " + rollToDelete + " not found.");
+                        System.out.println("Student with ID " + ID + " not found.");
                     }
                     break;
 
@@ -130,7 +130,7 @@ public class Student_Manage {
                     break;
 
                 default:
-                    System.out.println("Invalid choice! Try again.");
+                    System.out.println("Invalid choice...Try again.");
             }
 
         } while (C != 5);
